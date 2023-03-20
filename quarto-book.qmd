@@ -1,0 +1,57 @@
+# Quarto Book {#quarto-book}
+
+-   Quarto Book Examples:
+
+    -   R4DS 2e: <https://r4ds.hadley.nz>, <https://github.com/hadley/r4ds/> - 1e: <https://r4ds.had.co.nz>
+
+-   Welcome to Quatro: <https://quarto.org/>
+
+    1.  Download Quatro CLI
+
+    2.  Choose your tool and get started: RStudio
+
+-   Documentation:
+
+    -   Tutorial: Computations: <https://quarto.org/docs/get-started/computations/rstudio.html>
+
+    -   Tutorial: Authoring: <https://quarto.org/docs/get-started/authoring/rstudio.html>
+
+    -   Books: https://quarto.org/docs/books/
+
+-   2023.03.20: Created a Book as test
+
+    -   Engine: Knitr or Jupyter \> choose Knitr
+
+    -   Options: \[\]create a git repository, \[\]use [renv](https://rstudio.github.io/renv/) with this project, \[x\]use visual markdown editor (the last one is checked as default)
+
+        -   Checked all and open in new session
+
+    -   quarto.yml: Original
+
+        -   project:
+
+        -    type: book
+
+        -   project:
+
+        -    type: website
+
+        -    output-dir: docs
+
+    -   Git: commit changes
+
+    -   In Terminal: `touch .nojekyll`
+
+        -   git remote add origin [git\@github.com](mailto:git@github.com):icu-hsuzuki/myds.git
+
+        -   git branch -M main
+
+        -   git push -u origin main
+
+    -   \@GitHub
+
+        -   Setting \> Pages \> Branch: Select \`main\`, \`/docs\`, and then Save
+
+        -   About at Geer mark: \[x\]Use your GitHub Pages website
+
+    -   Add new chapters in `_quarto.yml`
