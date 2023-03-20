@@ -18,11 +18,13 @@
 
     -   Books: https://quarto.org/docs/books/
 
+    -   Book Options: https://quarto.org/docs/reference/projects/books.html
+
 -   2023.03.20: Created a Book as test
 
     -   Engine: Knitr or Jupyter \> choose Knitr
 
-    -   Options: \[\]create a git repository, \[\]use [renv](https://rstudio.github.io/renv/) with this project, \[x\]use visual markdown editor (the last one is checked as default)
+    -   Options: \[ \]create a git repository, \[ \]use [renv](https://rstudio.github.io/renv/) with this project, \[x\]use visual markdown editor (the last one is checked as default)
 
         -   Checked all and open in new session
 
@@ -34,7 +36,7 @@
 
         -   project:
 
-        -    type: website
+        -    type: book
 
         -    output-dir: docs
 

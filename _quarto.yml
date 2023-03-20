@@ -3,9 +3,12 @@ project:
   output-dir: docs
   
 book:
-  title: "myds"
+  title: "My Data Science"
   author: "Hiroshi Suzuki"
   date: "3/20/2023"
+  
+  reader-mode: true
+  
   chapters:
     - index.qmd
     - intro.qmd
