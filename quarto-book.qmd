@@ -1,8 +1,20 @@
-# Quarto Book {#quarto-book}
+# Quarto and Quarto Book {#quarto-book}
 
 -   Quarto Book Examples:
 
-    -   R4DS 2e: <https://r4ds.hadley.nz>, <https://github.com/hadley/r4ds/> - 1e: <https://r4ds.had.co.nz>
+    -   R4DS 2e: <https://r4ds.hadley.nz>,
+
+        -   Source: <https://github.com/hadley/r4ds/>
+
+        -   Current Version 1e: <https://r4ds.had.co.nz>
+
+    -   Python for Data Analysis 3e: <https://wesmckinney.com/book/>
+
+        -   Source: <https://github.com/wesm/pydata-book/tree/3rd-edition>
+
+    -   Visualization Curriculum: <https://jjallaire.github.io/visualization-curriculum/>
+
+        -   Source: <https://github.com/jjallaire/visualization-curriculum>
 
 -   Welcome to Quatro: <https://quarto.org/>
 
