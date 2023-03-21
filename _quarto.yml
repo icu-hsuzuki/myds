@@ -22,7 +22,9 @@ format:
   html:
     theme: cosmo
   pdf:
-    documentclass: scrreprt
+    pdf-engine: xelatex
+    documentclass: bxjsbook #scrreprt
+    classoption: xelatex, ja=standard
 
 editor: visual
 
