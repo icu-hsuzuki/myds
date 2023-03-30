@@ -5,7 +5,7 @@ project:
 book:
   title: "My Data Science"
   author: "Hiroshi Suzuki"
-  date: "3/20/2023"
+  date: "`r Sys.Date()`"
   
   reader-mode: true
   
@@ -13,8 +13,10 @@ book:
     - index.qmd
     - intro.qmd
     - summary.qmd
+    - windows.qmd
     - quarto-book.qmd
     - references.qmd
+    - todolist.qmd
 
 bibliography: references.bib
 

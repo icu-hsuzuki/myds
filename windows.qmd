@@ -1,0 +1,149 @@
+# Windows
+
+わたしは基本的に、Mac User なので、Windows のことは、あまり詳しくない。質問されることもあるが、常時つかっていないと、忘れてしまうことが多いので、Windows について、学んだことはその都度、備忘録として、書いておくことにする。
+
+名称などは、正確ではないかもしれないが、ある程度共通の用語を持っていないと、質問すらできないので。
+
+## 一般（GUI）Graphical User Interface
+
+### Windows 10
+
+-   Windows キー（以下 \[Win\]）を左クリックで、検索とメニューが出るのでそこで洗濯も可。場合によっては、右クリックすると、Option を選択でき、管理者で起動できる場合もある
+
+-   \[Win\] + \[R\]（\[R\] は R キー、プラスは押しながら、以下同様）：Run Box と呼ばれる検索窓が出る。参照から、ファイルなどを開けることも可能。
+
+-   \[Win\]+\[X\]：\[Win\] を右クリックも同じ
+
+-   下にあるメニューバーのようなもの（全体がタスクバー）の各部の名称について（設定可）
+
+    -   一番左：スタートボタン　Start Button
+
+    -   スタートボタンの上：システムアイコン System Icon 電源ボタン、アカウントなど
+
+    -   左から二番目：検索ボックス Search Box
+
+    -   左から三番目：Task View
+
+    -   左から四番目：Pinned Apps
+
+    -   右：通知領域 Notification Area 以前はタスクトレイ
+
+        -   一番右は、通知だが、その右には、時刻と日付、言語、スピーカー音量、wifi、電源、OneDrive　などが表示される。その左に天気
+
+## コマンドプロンプト Command Prompt
+
+-   検索ボックスに cmd と入れると見つかる。右のメニュには、管理者として実行 Run as administratorもある
+
+-   通常は、Case Insensitive 大文字と小文字を区別しない
+
+-   通常は、**`C:\Users\[Username]>`** と表示される。日本語システムでは **`C:¥Users¥[Username]>`**
+
+-   基本コマンド：
+
+    -   `cls` : クリアスクリーン clear screen
+
+    -   `[Ctrl]+[C]` : 実行の中断 stop command - interrupt running command
+
+    -   **`-help`** -- ヘルプ（ある場合のみ）の表示　Provides a Guide to other Commands
+
+        -   通常は、`/?` を利用する。例：`dir /?` `del /?`
+
+    -   `dir`: 現在のディレクトリの内容 Lists Items in a Directory
+
+    -   **`chdir`** or **`cd`** : ディレクトリの移動 Changes the Current Working Directory to the Specified Directory
+
+    -   **`mkdir`** : ディレクトリの作成 Creates a Folder
+
+    -   **`rmdir`** : ディレクトリの削除 Deletes a Folder
+
+    -   **`del`** : ファイルの削除 Deletes a File
+
+    -   **`move`** : ファイルやフォルダの移動 Moves a File or Folder to a Specified Folder
+
+    -   **`ren`** : ファイル名の変更 Renames a File with the Syntax
+
+        -   **`ren filename.extension new-name.extension`**
+
+    -   **`tree`** : ディレクトリー・ツリーの表示 Shows the Tree of the Current Directory or Specified Drive
+
+    -   **`echo`** : メッセージなどを、ファイルなどに出力 Shows Custom Messages or Messages from a Script or File
+
+        -   例：`echo "Hello World!"` `echo hello world > hello.txt`
+
+    -   **`more`** : ファイルの内容を表示 Shows More Information or the Content of a File
+
+        -   例：`more hello.txt`
+
+    -   **`ver`** : Windows のバージョンを表示 Shows the Version of the OS
+
+    -   **`systeminfo`**: コンピュータについての情報 Shows Your PC's Details
+
+        -   ホスト名、OS名、OS バージョン、OS 製造元、OS 構成、OS ビルドの種類、登録されている所有者、登録されている組織、プロダクトID、最初のインストール日付、システム起動時間、システム製造元、システムの種類、プロセッサ、BIOS バージョン、Windows ディレクトリ、システムディレクトリ、起動デバイス、システムロケール、タイムゾーン、物理メモリの合計、利用できる物理メモリ、仮想メモリ、ページファイルの場所、ドメイン、ログインサーバー、ホットフィックス、ネットワークカード、Hyper-V の要件
+
+    -   **`set`** : 環境変数の表示 Shows your PC\'s Environment Variables
+
+    -   **`clip`** : クリップボードにコピー Copies an Item to the Clipboard
+
+        -   例：`dir | clip` 現在のディレクトリの情報をクリップボードにコピー copies all the content of the present working directory to the clipboard.
+
+    -   **`assoc`** : プログラムと拡張子を表示 Lists Programs and the Extensions They are Associated With
+
+        -   例：`fc “file-1-path” “file-2-path”`
+
+    -   **`fc`** -- にているファイルの内容比較 Compares Two Similar Files
+
+    -   **`tasklist`** : 開いているプログラムの表示 Shows Open Programs
+
+    -   **`taskkill`** : 開いているプログラムを終了させる Terminates a Running Task
+
+        -   例：To kill a task, run `taskkill /IM "task.exe" /F`. For example, `taskkill /IM "chrome.exe" /F`:
+
+    -   **`exit`** : コマンドラインを終了 Closes the Command Line
+
+    -   `shutdown` : コンピュータのシステム終了など Shuts down, Restarts, Hibernates, Sleeps the Computer
+
+        -   例：`shutdown` とするとオプションが表示される（`shutdown /?` と同じ）
+
+    -   **`netstat -an`** : ポートの状況を表示　Shows Open Ports, their IP Addresses and States
+
+    -   **`ping`** : ウェッブサイトへの接続時間など Shows a Website IP Address, Lets you Know How Long it Takes to Transmit Data and a Get Response
+
+        -   例：ping "icu-hsuzuki.github.io"
+
+    -   **`ipconfig`** : コンピュータのインターネットアドレスの情報の表示 Shows Information about PC IP Addresses and Connections
+
+    -   `powercfg help`: 制御設定のためのヘルプ　Controls Configurable Power Settings Help
+
+    -   `powershell start cmd -v runAs` : 管理者として実行 run as administrator 確認画面が出る
+
+    -   **`sfc`** : \[管理者のみ実行可\] システムファイルの状況を確認 System File Checker
+
+    -   **`driverquery`** --インストールされている、ドライバーのリストを表示Lists All Installed Drivers
+
+## パワーシェル PowerShell
+
+-   通常は、Case Insensitive 大文字と小文字を区別しない
+
+-   \[Introduction to PowerShell\](https://learn.microsoft.com/en-us/training/modules/introduction-to-powershell/)
+
+## ギットバッシュ GitBash
+
+-   Git をインストールするときに同時に、インストールできる
+
+## WSL - Windows Subsystem Linux
+
+-   PowerShell を管理者で起動
+
+-   Enable-WindowsOptionalFeature -Online - FeatureName Microsoft-Windows-Subsystem-Linux
+
+    -   だいぶ時間がかかり再起動：上になにやら linux をインストールしていそうなマークが現れる。
+
+    -   検索ボックス： store \> Search Window: ubuntu \[入手\] だいぶ時間がかかる
+
+        -   \[開く\] Ubuntu: Installing, this may take a few minutes\...
+
+    -   Windows system for windows: ON
+
+    -   検索ボックス：ubuntu
+
+    -   WSL を アンインストールする場合 uninstall: lxrun /uninstall /full

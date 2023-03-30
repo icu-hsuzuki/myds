@@ -21,9 +21,44 @@
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "windows.html#一般guigraphical-user-interface",
+    "href": "windows.html#一般guigraphical-user-interface",
+    "title": "3  Windows",
+    "section": "3.1 一般（GUI）Graphical User Interface",
+    "text": "3.1 一般（GUI）Graphical User Interface\n\n3.1.1 Windows 10\n\nWindows キー（以下 [Win]）を左クリックで、検索とメニューが出るのでそこで洗濯も可。場合によっては、右クリックすると、Option を選択でき、管理者で起動できる場合もある\n[Win] + [R]（[R] は R キー、プラスは押しながら、以下同様）：Run Box と呼ばれる検索窓が出る。参照から、ファイルなどを開けることも可能。\n[Win]+[X]：[Win] を右クリックも同じ\n下にあるメニューバーのようなもの（全体がタスクバー）の各部の名称について（設定可）\n\n一番左：スタートボタン　Start Button\nスタートボタンの上：システムアイコン System Icon 電源ボタン、アカウントなど\n左から二番目：検索ボックス Search Box\n左から三番目：Task View\n左から四番目：Pinned Apps\n右：通知領域 Notification Area 以前はタスクトレイ\n\n一番右は、通知だが、その右には、時刻と日付、言語、スピーカー音量、wifi、電源、OneDrive　などが表示される。その左に天気"
+  },
+  {
+    "objectID": "windows.html#コマンドプロンプト-command-prompt",
+    "href": "windows.html#コマンドプロンプト-command-prompt",
+    "title": "3  Windows",
+    "section": "3.2 コマンドプロンプト Command Prompt",
+    "text": "3.2 コマンドプロンプト Command Prompt\n\n検索ボックスに cmd と入れると見つかる。右のメニュには、管理者として実行 Run as administratorもある\n通常は、Case Insensitive 大文字と小文字を区別しない\n通常は、C:\\Users\\[Username]> と表示される。日本語システムでは C:¥Users¥[Username]>\n基本コマンド：\n\ncls : クリアスクリーン clear screen\n[Ctrl]+[C] : 実行の中断 stop command - interrupt running command\n-help – ヘルプ（ある場合のみ）の表示　Provides a Guide to other Commands\n\n通常は、/? を利用する。例：dir /? del /?\n\ndir: 現在のディレクトリの内容 Lists Items in a Directory\nchdir or cd : ディレクトリの移動 Changes the Current Working Directory to the Specified Directory\nmkdir : ディレクトリの作成 Creates a Folder\nrmdir : ディレクトリの削除 Deletes a Folder\ndel : ファイルの削除 Deletes a File\nmove : ファイルやフォルダの移動 Moves a File or Folder to a Specified Folder\nren : ファイル名の変更 Renames a File with the Syntax\n\nren filename.extension new-name.extension\n\ntree : ディレクトリー・ツリーの表示 Shows the Tree of the Current Directory or Specified Drive\necho : メッセージなどを、ファイルなどに出力 Shows Custom Messages or Messages from a Script or File\n\n例：echo \"Hello World!\" echo hello world > hello.txt\n\nmore : ファイルの内容を表示 Shows More Information or the Content of a File\n\n例：more hello.txt\n\nver : Windows のバージョンを表示 Shows the Version of the OS\nsysteminfo: コンピュータについての情報 Shows Your PC’s Details\n\nホスト名、OS名、OS バージョン、OS 製造元、OS 構成、OS ビルドの種類、登録されている所有者、登録されている組織、プロダクトID、最初のインストール日付、システム起動時間、システム製造元、システムの種類、プロセッサ、BIOS バージョン、Windows ディレクトリ、システムディレクトリ、起動デバイス、システムロケール、タイムゾーン、物理メモリの合計、利用できる物理メモリ、仮想メモリ、ページファイルの場所、ドメイン、ログインサーバー、ホットフィックス、ネットワークカード、Hyper-V の要件\n\nset : 環境変数の表示 Shows your PC's Environment Variables\nclip : クリップボードにコピー Copies an Item to the Clipboard\n\n例：dir | clip 現在のディレクトリの情報をクリップボードにコピー copies all the content of the present working directory to the clipboard.\n\nassoc : プログラムと拡張子を表示 Lists Programs and the Extensions They are Associated With\n\n例：fc “file-1-path” “file-2-path”\n\nfc – にているファイルの内容比較 Compares Two Similar Files\ntasklist : 開いているプログラムの表示 Shows Open Programs\ntaskkill : 開いているプログラムを終了させる Terminates a Running Task\n\n例：To kill a task, run taskkill /IM \"task.exe\" /F. For example, taskkill /IM \"chrome.exe\" /F:\n\nexit : コマンドラインを終了 Closes the Command Line\nshutdown : コンピュータのシステム終了など Shuts down, Restarts, Hibernates, Sleeps the Computer\n\n例：shutdown とするとオプションが表示される（shutdown /? と同じ）\n\nnetstat -an : ポートの状況を表示　Shows Open Ports, their IP Addresses and States\nping : ウェッブサイトへの接続時間など Shows a Website IP Address, Lets you Know How Long it Takes to Transmit Data and a Get Response\n\n例：ping “icu-hsuzuki.github.io”\n\nipconfig : コンピュータのインターネットアドレスの情報の表示 Shows Information about PC IP Addresses and Connections\npowercfg help: 制御設定のためのヘルプ　Controls Configurable Power Settings Help\npowershell start cmd -v runAs : 管理者として実行 run as administrator 確認画面が出る\nsfc : [管理者のみ実行可] システムファイルの状況を確認 System File Checker\ndriverquery –インストールされている、ドライバーのリストを表示Lists All Installed Drivers"
+  },
+  {
+    "objectID": "windows.html#パワーシェル-powershell",
+    "href": "windows.html#パワーシェル-powershell",
+    "title": "3  Windows",
+    "section": "3.3 パワーシェル PowerShell",
+    "text": "3.3 パワーシェル PowerShell\n\n通常は、Case Insensitive 大文字と小文字を区別しない\n[Introduction to PowerShell](https://learn.microsoft.com/en-us/training/modules/introduction-to-powershell/)"
+  },
+  {
+    "objectID": "windows.html#ギットバッシュ-gitbash",
+    "href": "windows.html#ギットバッシュ-gitbash",
+    "title": "3  Windows",
+    "section": "3.4 ギットバッシュ GitBash",
+    "text": "3.4 ギットバッシュ GitBash\n\nGit をインストールするときに同時に、インストールできる"
+  },
+  {
+    "objectID": "windows.html#wsl---windows-subsystem-linux",
+    "href": "windows.html#wsl---windows-subsystem-linux",
+    "title": "3  Windows",
+    "section": "3.5 WSL - Windows Subsystem Linux",
+    "text": "3.5 WSL - Windows Subsystem Linux\n\nPowerShell を管理者で起動\nEnable-WindowsOptionalFeature -Online - FeatureName Microsoft-Windows-Subsystem-Linux\n\nだいぶ時間がかかり再起動：上になにやら linux をインストールしていそうなマークが現れる。\n検索ボックス： store > Search Window: ubuntu [入手] だいぶ時間がかかる\n\n[開く] Ubuntu: Installing, this may take a few minutes...\n\nWindows system for windows: ON\n検索ボックス：ubuntu\nWSL を アンインストールする場合 uninstall: lxrun /uninstall /full"
+  },
+  {
     "objectID": "quarto-book.html",
     "href": "quarto-book.html",
-    "title": "3  Quarto and Quarto Book",
+    "title": "4  Quarto and Quarto Book",
     "section": "",
     "text": "Quarto Book Examples:\n\nR4DS 2e: https://r4ds.hadley.nz,\n\nSource: https://github.com/hadley/r4ds/\nCurrent Version 1e: https://r4ds.had.co.nz\n\nPython for Data Analysis 3e: https://wesmckinney.com/book/\n\nSource: https://github.com/wesm/pydata-book/tree/3rd-edition\n\nVisualization Curriculum: https://jjallaire.github.io/visualization-curriculum/\n\nSource: https://github.com/jjallaire/visualization-curriculum\n\n\nWelcome to Quatro: https://quarto.org/\n\nDownload Quatro CLI\nChoose your tool and get started: RStudio\n\nDocumentation:\n\nTutorial: Computations: https://quarto.org/docs/get-started/computations/rstudio.html\nTutorial: Authoring: https://quarto.org/docs/get-started/authoring/rstudio.html\nBooks: https://quarto.org/docs/books/\nBook Options: https://quarto.org/docs/reference/projects/books.html\n\n2023.03.20: Created a Book as test\n\nEngine: Knitr or Jupyter > choose Knitr\nOptions: [ ]create a git repository, [ ]use renv with this project, [x]use visual markdown editor (the last one is checked as default)\n\nChecked all and open in new session\n\nquarto.yml: Original\n\nproject:\ntype: book\nproject:\ntype: book\noutput-dir: docs\n\nGit: commit changes\nIn Terminal: touch .nojekyll\n\ngit remote add origin git@github.com:icu-hsuzuki/myds.git\ngit branch -M main\ngit push -u origin main\n\n@GitHub\n\nSetting > Pages > Branch: Select `main`, `/docs`, and then Save\nAbout at Geer mark: [x]Use your GitHub Pages website\n\nAdd new chapters in _quarto.yml"
   },
@@ -33,5 +68,26 @@
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "todolist.html#データサイエンスをはじめましょう",
+    "href": "todolist.html#データサイエンスをはじめましょう",
+    "title": "5  To Do List",
+    "section": "5.1 データサイエンスをはじめましょう",
+    "text": "5.1 データサイエンスをはじめましょう\n\nRStudio で R\n\nWindows について\n日本語環境について"
+  },
+  {
+    "objectID": "todolist.html#データサイエンスを教えませんか",
+    "href": "todolist.html#データサイエンスを教えませんか",
+    "title": "5  To Do List",
+    "section": "5.2 データサイエンスを教えませんか",
+    "text": "5.2 データサイエンスを教えませんか"
+  },
+  {
+    "objectID": "todolist.html#わたしのデータサイエンス",
+    "href": "todolist.html#わたしのデータサイエンス",
+    "title": "5  To Do List",
+    "section": "5.3 わたしのデータサイエンス",
+    "text": "5.3 わたしのデータサイエンス\n\nQuarto について vs RMarkdown"
   }
 ]
