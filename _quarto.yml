@@ -15,8 +15,8 @@ book:
     - summary.qmd
     - windows.qmd
     - quarto-book.qmd
-    - references.qmd
     - todolist.qmd
+    - references.qmd
 
 bibliography: references.bib
 
