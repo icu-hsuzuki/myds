@@ -1,12 +1,14 @@
 # この文書について {.unnumbered}
 
-データサイエンス、AI（Artificial Intelligence 人工知能）関連で考えたこと、および調べたことを、メモがわりに、書いていこうと思っている。いずれは、データサイエンスと言える内容を発信できると良いと思っている。
+データサイエンス、AI（Artificial Intelligence 人工知能）関連で考えたこと、および調べたことを、メモがわりに、書いていこうと思っている。いずれは、データサイエンスと言える内容を発信できると嬉しい。
 
 まとまった内容を書く予定はいまのところない。
 
 現在は、データサイエンスと言える内容を、書くだけの力がないだけではなく、以下のプロジェクトが進行中で、そのための、下調べのメモを中心に書いていく。
 
 ## データサイエンスをはじめましょう
+
+[リンク](https://icu-hsuzuki.github.io/ds4aj/)・[GitHub Repository](https://github.com/icu-hsuzuki/ds4aj)
 
 基本的に、自習型の、学習コンテンツで、大学などで、教えるためにも、学習者に参考にしてもらうための、内容を書いていきたい。
 
@@ -31,6 +33,8 @@
     -   [Introduction to R - A Short Course](https://ds-sl.github.io/intro2r/intro2r.nb.html)
 
 ## データサイエンスを教えませんか
+
+[リンク](https://icu-hsuzuki.github.io/ds_education/)・[GitHub Repository](https://github.com/icu-hsuzuki/ds_education)
 
 データサイエンス教育に関する素材を集めたものとしてスタートしたが、基本的には、データサイエンスにあまり馴染みがないが、学びながら、教えていきたい方向けのコンテンツを目指している。
 
