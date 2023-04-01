@@ -5,18 +5,18 @@ project:
 book:
   title: "My Data Science"
   author: "Hiroshi Suzuki"
-  date: "`r Sys.Date()`"
+  date: today
   
   reader-mode: true
   
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
     - techmemo.qmd
     - windows.qmd
     - quarto-book.qmd
     - todolist.qmd
+    - summary.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -26,7 +26,7 @@ format:
     theme: cosmo
   pdf:
     pdf-engine: xelatex
-    documentclass: bxjsbook #scrreprt
+    documentclass: bxjsreport #scrreprt
     classoption: xelatex, ja=standard
 
 editor: visual
