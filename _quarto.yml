@@ -13,6 +13,7 @@ book:
     - index.qmd
     - intro.qmd
     - summary.qmd
+    - techmemo.qmd
     - windows.qmd
     - quarto-book.qmd
     - todolist.qmd

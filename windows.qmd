@@ -6,6 +6,16 @@
 
 ## 一般（GUI）Graphical User Interface
 
+### 設定 Setup
+
+-   環境変数：システム環境変数（S）と、環境変数（U）がある
+
+    -   環境変数(U)：OneDrive の Path、Path、TEMP、TMP が含まれる
+
+        -   C:\\Users\\'User'\\AppData\\Local\\Microsoft\\WindowsApps;C:\\ 以下続く
+
+        -   追加される時はつねに最後に加えられる（システム環境変数も同様）
+
 ### Windows 10
 
 -   Windows キー（以下 \[Win\]）を左クリックで、検索とメニューが出るのでそこで洗濯も可。場合によっては、右クリックすると、Option を選択でき、管理者で起動できる場合もある
@@ -29,6 +39,12 @@
     -   右：通知領域 Notification Area 以前はタスクトレイ
 
         -   一番右は、通知だが、その右には、時刻と日付、言語、スピーカー音量、wifi、電源、OneDrive　などが表示される。その左に天気
+
+-   Reference:
+
+    -   [Windows Server documentation](https://learn.microsoft.com/en-us/windows-server/)
+
+        -   [Windows Commands](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
 
 ## コマンドプロンプト Command Prompt
 
@@ -124,7 +140,7 @@
 
 -   通常は、Case Insensitive 大文字と小文字を区別しない
 
--   \[Introduction to PowerShell\](https://learn.microsoft.com/en-us/training/modules/introduction-to-powershell/)
+-   [Introduction to PowerShell](https://learn.microsoft.com/en-us/training/modules/introduction-to-powershell/)
 
 ## ギットバッシュ GitBash
 
