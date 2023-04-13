@@ -204,41 +204,49 @@ RStudio で、Git-GitHub を利用するときのメモを書いておきます�
 
 > **用語：**ワークツリー（work tree with branches）、ステージ（staging）、ローカルリポジトリ（local repository in the PC）、リモートリポジトリ（remote repository in GitHub）、アップストリームリポジトリ（upstream repository in the owner's GitHub account）、プルリクエスト（pull-request and its approval）
 
--   初期化：git init
+Git では、`-` と `–-` を使い分けるので注意が必要。`-` は、コマンドオプション、`--` は、コマンドオプションと、コマンド変数を分けるためのもので、- のあとは、一文字。
+
+-   Help：`git -help COMMAND`
+
+    -   例：`git commit --help`
+
+    -   例：`git -help –-no-pager branch`
+
+-   初期化：`git init`
 
     -   RStudio: New Project 作成時に、Check または、Version Control Git
 
 -   GitHub 初期設定：
 
-    -   git config \--global [user.name](http://user.name) "Name"
+    -   `git config --global user.name "Name"`
 
-    -   git config \--global [user.email](http://user.email) EmailAddress
+    -   `git config --global user.email EmailAddress`
 
     -   RStudio: SSH などの初期設定をしてあれば、Version Control Git で、Set up 可能。確認：Project Option and Global Option
 
--   変更記録：git add . / git add [README.md](http://README.md)
+-   変更記録：`git add .` / `git add README.md`
 
-    -   git commit -m "message"
+    -   `git commit -m "message"`
 
     -   RStudio: Add されたものが、Git Tab 上に表示、Staged に、チェックをつけ、それから、Commit
 
--   状況確認：変更内容のチェック：diff/status
+-   状況確認：変更内容のチェック：`diff/status`
 
     -   ワークツリーとの差分：git diff FileName
 
-    -   リポジトリーとステージの差分：git diff -staged
+    -   リポジトリーとステージの差分：`git diff -staged`
 
-    -   変更ファイルのチェック：git status
+    -   変更ファイルのチェック：`git status`
 
     -   RStudio: Git Tab のリストにあがっているものについて、Diff ボタンを押すと、表示される。
 
--   履歴の確認：git log
+-   履歴の確認：`git log`
 
     -   RStudio: Git Tab の History を押すと、commit のリストが表示され、その、Log を見ることができる。
 
--   もとに戻す：git restore
+-   もとに戻す：`git restore`
 
-    -   ワークツリーの変更の取り消し：git restore FileName
+    -   ワークツリーの変更の取り消し：`git restore FileName`
 
     -   ステージにあげた変更をワークツリーに戻す：git restore \--staged FileName
 
@@ -246,73 +254,79 @@ RStudio で、Git-GitHub を利用するときのメモを書いておきます�
 
 -   ブランチを作成：branch、ポインター HEAD
 
-    -   作成：git branch BranchName
+    -   作成：`git branch BranchName`
 
         -   RStudio: New Branch から作成可能
 
-    -   ブランチの一覧表示：git branch
+    -   ブランチの一覧表示：`git branch`
 
         -   RStudio: New Branch の右の三角から表示、選択
 
-    -   GitHub も含めたブランチの一覧表示：git branch -a
+    -   GitHub も含めたブランチの一覧表示：`git branch -a`
 
         -   RStudio: New Branch の右の三角から表示、選択
 
-    -   切り替え：git switch BranchName
+    -   切り替え：`git switch BranchName`
 
     -   新しいブランチを作成して切り替え：git switch \--c BranchName
 
-    -   マージ：git merge BranchName
+    -   マージ：`git merge BranchName`
 
         -   難しい。RStudio では、Terminal からで、Editor（Default は、vi 慣れていなければ、`Sys.setenv(EDITOR="nano"）`などとするのが得策。） が立ち上がる。
 
-    -   GitHub 上のものをマージ：git merge orign/main
+    -   GitHub 上のものをマージ：`git merge orign/main`
 
     -   コンフリクト conflict: 最終的なものを Editor  で残す。
 
--   GitHub Origin の追加：git add remote orign
+-   GitHub Origin の追加：`git add remote orign`
 
-    -   git add remote origin URL
+    -   `git add remote origin URL`
 
-    -   git add upstream origin URL なども可能
+    -   `git add upstream origin URL` なども可能
 
 -   Push/Pull (Fetch+Merge)/Fetch:　リモート名　ブランチ名
 
-    -   git push orign main
+    -   `git push orign main`
 
         -   RStudio: Push ボタン
 
-    -   git pull origin main
+    -   `git pull origin main`
 
         -   RStudio: Pull ボタン
 
-    -   git pull （省略可能）
+    -   `git pull` （省略可能）
 
-    -   git fetch origin （リモート名）confilict が起こりそうな時は、fetch + merge
+    -   `git fetch origin` （リモート名）confilict が起こりそうな時は、fetch + merge
 
         -   変更途中の時は、fetch + merge 、main に取り込みたい時は、pull
+
+    -   `git fetch --prune`
+
+    -   `git remote prune origin`
+
+        -   RStudio では、Git Tab の一番右の、Refresh ボタン
 
 -   Pull Request の手順
 
     -   main を最新の状態に更新: 例：This branch is [2 commits behind](https://github.com/ds-sl/eco-book/compare/main...icu-hsuzuki:eco-book:main) icu-hsuzuki:main.　Synk fork: This branch is out-of-date \> Update branch
 
-        -   git branch
+        -   `git branch`
 
-        -   git pull origin main
+        -   `git pull origin main`
 
     -   ブランチを作成
 
-        -   git switch -c BranchName
+        -   `git switch -c BranchName`
 
     -   ファイルを修正・コミット
 
-        -   git add .
+        -   `git add .`
 
-        -   git commit -m "message"
+        -   `git commit -m "message"`
 
     -   Push
 
-        -   git push origin BranchName
+        -   `git push origin BranchName`
 
     -   Pull Request
 
