@@ -96,7 +96,7 @@
 
         -   ホスト名、OS名、OS バージョン、OS 製造元、OS 構成、OS ビルドの種類、登録されている所有者、登録されている組織、プロダクトID、最初のインストール日付、システム起動時間、システム製造元、システムの種類、プロセッサ、BIOS バージョン、Windows ディレクトリ、システムディレクトリ、起動デバイス、システムロケール、タイムゾーン、物理メモリの合計、利用できる物理メモリ、仮想メモリ、ページファイルの場所、ドメイン、ログインサーバー、ホットフィックス、ネットワークカード、Hyper-V の要件
 
-    -   **`set`** : 環境変数の表示 Shows your PC\'s Environment Variables
+    -   **`set`** : 環境変数の表示 Shows your PC's Environment Variables
 
     -   **`clip`** : クリップボードにコピー Copies an Item to the Clipboard
 

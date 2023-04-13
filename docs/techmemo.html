@@ -222,6 +222,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#texlive-のインストール" id="toc-texlive-のインストール" class="nav-link" data-scroll-target="#texlive-のインストール"><span class="toc-section-number">2.1.6</span>  TeXLive のインストール</a></li>
   <li><a href="#onedrive-の設定について" id="toc-onedrive-の設定について" class="nav-link" data-scroll-target="#onedrive-の設定について"><span class="toc-section-number">2.1.7</span>  OneDrive の設定について</a></li>
   </ul></li>
+  <li><a href="#git-github-rstudio" id="toc-git-github-rstudio" class="nav-link" data-scroll-target="#git-github-rstudio"><span class="toc-section-number">2.2</span>  Git-GitHub-RStudio</a>
+  <ul class="collapse">
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="toc-section-number">2.2.1</span>  Basics</a></li>
+  </ul></li>
+  <li><a href="#removing-large-files" id="toc-removing-large-files" class="nav-link" data-scroll-target="#removing-large-files"><span class="toc-section-number">2.3</span>  Removing Large Files</a>
+  <ul class="collapse">
+  <li><a href="#simple-pull-request" id="toc-simple-pull-request" class="nav-link" data-scroll-target="#simple-pull-request"><span class="toc-section-number">2.3.1</span>  Simple Pull Request</a></li>
+  <li><a href="#owner-side-approval" id="toc-owner-side-approval" class="nav-link" data-scroll-target="#owner-side-approval"><span class="toc-section-number">2.3.2</span>  Owner Side Approval</a></li>
+  <li><a href="#参考資料" id="toc-参考資料" class="nav-link" data-scroll-target="#参考資料"><span class="toc-section-number">2.3.3</span>  参考資料</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -421,6 +431,196 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>すでに、OneDrive を使っている場合には、そのバックアップを停止したときに、どのようなことが起こるか確認が必要ですので、C ドライブ内に、R 用の、Directory を作成し、そこで作業するのが良いのですが、さまざまな設定が、Home ディレクトリにあり、それが、バックアップされている場合には、他のディレクトリに、たとえば、プロジェクトを作成したり、Library のディレクトリを指定しても、問題が解決しない場合が多いようです。その場合は、まずは、他のアカウントを作成し、そちらで作業をすることをお勧めします。</p>
 <p>そのあとで、バックアップするディレクトリを整理して、OneDrive のバックアップで、デスクトップや、ドキュメントのバックアップをしているのを止め、OneDrive 内に、新たに、ディレクトリを作成して、バックアップしたいものを、その中に移して、能動的に、バックアップするディレクトリを決めるのがよいと思います。</p>
 <p>個人個人で状況が異なりますので、この程度にしておきます。</p>
+</section>
+</section>
+<section id="git-github-rstudio" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="git-github-rstudio"><span class="header-section-number">2.2</span> Git-GitHub-RStudio</h2>
+<p>RStudio で、Git-GitHub を利用するときのメモを書いておきます。</p>
+<section id="basics" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="basics"><span class="header-section-number">2.2.1</span> Basics</h3>
+<blockquote class="blockquote">
+<p><strong>用語：</strong>ワークツリー（work tree with branches）、ステージ（staging）、ローカルリポジトリ（local repository in the PC）、リモートリポジトリ（remote repository in GitHub）、アップストリームリポジトリ（upstream repository in the owner’s GitHub account）、プルリクエスト（pull-request and its approval）</p>
+</blockquote>
+<ul>
+<li><p>初期化：git init</p>
+<ul>
+<li>RStudio: New Project 作成時に、Check または、Version Control Git</li>
+</ul></li>
+<li><p>GitHub 初期設定：</p>
+<ul>
+<li><p>git config --global <a href="http://user.name">user.name</a> “Name”</p></li>
+<li><p>git config --global <a href="http://user.email">user.email</a> EmailAddress</p></li>
+<li><p>RStudio: SSH などの初期設定をしてあれば、Version Control Git で、Set up 可能。確認：Project Option and Global Option</p></li>
+</ul></li>
+<li><p>変更記録：git add . / git add <a href="http://README.md">README.md</a></p>
+<ul>
+<li><p>git commit -m “message”</p></li>
+<li><p>RStudio: Add されたものが、Git Tab 上に表示、Staged に、チェックをつけ、それから、Commit</p></li>
+</ul></li>
+<li><p>状況確認：変更内容のチェック：diff/status</p>
+<ul>
+<li><p>ワークツリーとの差分：git diff FileName</p></li>
+<li><p>リポジトリーとステージの差分：git diff -staged</p></li>
+<li><p>変更ファイルのチェック：git status</p></li>
+<li><p>RStudio: Git Tab のリストにあがっているものについて、Diff ボタンを押すと、表示される。</p></li>
+</ul></li>
+<li><p>履歴の確認：git log</p>
+<ul>
+<li>RStudio: Git Tab の History を押すと、commit のリストが表示され、その、Log を見ることができる。</li>
+</ul></li>
+<li><p>もとに戻す：git restore</p>
+<ul>
+<li><p>ワークツリーの変更の取り消し：git restore FileName</p></li>
+<li><p>ステージにあげた変更をワークツリーに戻す：git restore --staged FileName</p></li>
+<li><p>RStudio: Staged にチェックをつけ、More の　revert を選択すると、同様なことが可能のように思われる。</p></li>
+</ul></li>
+<li><p>ブランチを作成：branch、ポインター HEAD</p>
+<ul>
+<li><p>作成：git branch BranchName</p>
+<ul>
+<li>RStudio: New Branch から作成可能</li>
+</ul></li>
+<li><p>ブランチの一覧表示：git branch</p>
+<ul>
+<li>RStudio: New Branch の右の三角から表示、選択</li>
+</ul></li>
+<li><p>GitHub も含めたブランチの一覧表示：git branch -a</p>
+<ul>
+<li>RStudio: New Branch の右の三角から表示、選択</li>
+</ul></li>
+<li><p>切り替え：git switch BranchName</p></li>
+<li><p>新しいブランチを作成して切り替え：git switch --c BranchName</p></li>
+<li><p>マージ：git merge BranchName</p>
+<ul>
+<li>難しい。RStudio では、Terminal からで、Editor（Default は、vi 慣れていなければ、<code>Sys.setenv(EDITOR="nano"）</code>などとするのが得策。） が立ち上がる。</li>
+</ul></li>
+<li><p>GitHub 上のものをマージ：git merge orign/main</p></li>
+<li><p>コンフリクト conflict: 最終的なものを Editor&nbsp; で残す。</p></li>
+</ul></li>
+<li><p>GitHub Origin の追加：git add remote orign</p>
+<ul>
+<li><p>git add remote origin URL</p></li>
+<li><p>git add upstream origin URL なども可能</p></li>
+</ul></li>
+<li><p>Push/Pull (Fetch+Merge)/Fetch:　リモート名　ブランチ名</p>
+<ul>
+<li><p>git push orign main</p>
+<ul>
+<li>RStudio: Push ボタン</li>
+</ul></li>
+<li><p>git pull origin main</p>
+<ul>
+<li>RStudio: Pull ボタン</li>
+</ul></li>
+<li><p>git pull （省略可能）</p></li>
+<li><p>git fetch origin （リモート名）confilict が起こりそうな時は、fetch + merge</p>
+<ul>
+<li>変更途中の時は、fetch + merge 、main に取り込みたい時は、pull</li>
+</ul></li>
+</ul></li>
+<li><p>Pull Request の手順</p>
+<ul>
+<li><p>main を最新の状態に更新: 例：This branch is <a href="https://github.com/ds-sl/eco-book/compare/main...icu-hsuzuki:eco-book:main">2 commits behind</a> icu-hsuzuki:main.　Synk fork: This branch is out-of-date &gt; Update branch</p>
+<ul>
+<li><p>git branch</p></li>
+<li><p>git pull origin main</p></li>
+</ul></li>
+<li><p>ブランチを作成</p>
+<ul>
+<li>git switch -c BranchName</li>
+</ul></li>
+<li><p>ファイルを修正・コミット</p>
+<ul>
+<li><p>git add .</p></li>
+<li><p>git commit -m “message”</p></li>
+</ul></li>
+<li><p>Push</p>
+<ul>
+<li>git push origin BranchName</li>
+</ul></li>
+<li><p>Pull Request</p>
+<ul>
+<li><p>@GitHub: Pull Request &gt; New Pull Request</p></li>
+<li><p>base: main &lt;- compare: BranchName（Comparing changes で、変更を提案している BranchName を確認）</p></li>
+<li><p>Create Pull Request&gt;　Add Title, Comment &gt; Create Pull Requst ボタン</p></li>
+<li><p>File Changed を確認</p></li>
+<li><p>Reviewer を追加しておいてみてもらう。</p></li>
+<li><p>Merge Pull Request</p></li>
+<li><p>Delet Branch: git branch -d BranchName (-D force)</p></li>
+<li><p>Code で確認</p></li>
+</ul></li>
+<li><p>Code Review</p></li>
+<li><p>Merge</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="removing-large-files" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="removing-large-files"><span class="header-section-number">2.3</span> Removing Large Files</h2>
+<ul>
+<li><p>Scenario 1: The Large File Was Just Added in the Most Recent Commit</p>
+<ul>
+<li><p>git rm --cached <em>big_file_name</em></p></li>
+<li><p>git commit --amend -C HEAD</p></li>
+</ul></li>
+<li><p>Scenario 2: The Large File Was Committed Prior to The Most Recent Commit</p>
+<ul>
+<li><p>Locating the Last "Good" Commit: git log --oneline</p></li>
+<li><p>Initiate a Rebase Between the Last "Good" Commit and the Current Commit: git rebase -i 8464da4</p></li>
+<li><p>This will open up a file in your Git editor (in my case, Vim), that looks something like this:</p>
+<ul>
+<li>pick -&gt; edit</li>
+</ul></li>
+<li><p>git rm --cached csv_building_damage_assessment.csv</p></li>
+<li><p>git commit --amend -C HEAD</p></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li>Reset changes: git reset --hard SHA-Name</li>
+</ul>
+<section id="simple-pull-request" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="simple-pull-request"><span class="header-section-number">2.3.1</span> Simple Pull Request</h3>
+<ol type="1">
+<li><p>Log in to your GitHub account</p></li>
+<li><p>Go to the respository you want to comment</p></li>
+<li><p>Fork the repository</p></li>
+<li><p>Clone the repository (forked from the original) using ssh</p>
+<ol type="1">
+<li><p>git clone <a href="mailto:git@github.com">git@github.com</a>:account/repo</p></li>
+<li><p>Enter ssh permisssion</p></li>
+<li><p>less FileName</p></li>
+</ol></li>
+<li><p>git checkout -b Branch-Name</p></li>
+<li><p>edit the file</p></li>
+<li><p>git status</p></li>
+<li><p>git diff</p></li>
+<li><p>git add FileName</p></li>
+<li><p>git commit -m “short message”</p></li>
+<li><p>git push origin Branch-Name</p></li>
+<li><p>In GitHub acount: Compare &amp; pull request</p></li>
+<li><p>Add a short comment</p></li>
+<li><p>Push Create a pull request</p></li>
+</ol>
+</section>
+<section id="owner-side-approval" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="owner-side-approval"><span class="header-section-number">2.3.2</span> Owner Side Approval</h3>
+<ol type="1">
+<li><p>See commit, file changed</p></li>
+<li><p>Merges pull request</p></li>
+<li><p>Confirm merge</p></li>
+</ol>
+</section>
+<section id="参考資料" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="参考資料"><span class="header-section-number">2.3.3</span> 参考資料</h3>
+<ul>
+<li><p><a href="https://training.github.com">GitHub Training Kit</a>: CheatSheet や、日本語ドキュメントもある</p></li>
+<li><p><a href="https://www.tidyverse.org/blog/2020/12/usethis-2-0-0/">Package usethis 2.0.0</a>: Tidyverse</p>
+<ul>
+<li><a href="https://happygitwithr.com/index.html">Happy Git and GitHub for the useR</a></li>
+</ul></li>
+<li><p><a href="https://medium.com/analytics-vidhya/tutorial-removing-large-files-from-git-78dbf4cf83a">Removing Large Files</a></p></li>
+</ul>
 
 
 </section>

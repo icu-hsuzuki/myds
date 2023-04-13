@@ -44,13 +44,13 @@
 
         -   project:
 
-        -    type: book
+        -   type: book
 
         -   project:
 
-        -    type: book
+        -   type: book
 
-        -    output-dir: docs
+        -   output-dir: docs
 
     -   Git: commit changes
 

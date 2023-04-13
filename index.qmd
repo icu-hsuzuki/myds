@@ -50,7 +50,7 @@
 
 -   [生涯学び続ける基盤を構築するデータサイエンス・コースの開発](https://ds-sl.github.io/intro2r/rims2023p.nb.html)
 
-    -   [スライド](https://ds-sl.github.io/intro2r/rims2023p.html)・[ビデオ](https://youtu.be/8PY9wlzFQz0)（2023年3月9日の数理科学研究所での午後の講演前半・後半は「[Rではじめるデータ・サイエンス](https://ds-sl.github.io/intro2r/intro2rj.nb.html")」
+    -   [スライド](https://ds-sl.github.io/intro2r/rims2023p.html)・[ビデオ](https://youtu.be/8PY9wlzFQz0)（2023年3月9日の数理科学研究所での午後の講演前半・後半は「[Rではじめるデータ・サイエンス](https://ds-sl.github.io/intro2r/intro2rj.nb.html%22)」
 
 -   教養としてのデータサイエンス教育～MOOCsの活用を視野に入れて～　[日本数学会教育委員会主催教育シンポジウム](https://www.mathsoc.jp/overview/committee/education/sympo/2019sep.html)：文理共通して行う数理・データサイエンス教育における講演　時：2019年9月17日　於：金沢大学角間キャンパス
 

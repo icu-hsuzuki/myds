@@ -140,7 +140,7 @@ tinytex::is_tinytex()
 
 ### 別のアカウントを作成する方法
 
-1.   設定のアカウントから、新しいユーザを作成を選択
+1.  設定のアカウントから、新しいユーザを作成を選択
 
 2.  その他のユーザーをこのPCに追加
 
@@ -195,3 +195,224 @@ OneDrive を左クリックすると、設定がひらけます。基本的に�
 そのあとで、バックアップするディレクトリを整理して、OneDrive のバックアップで、デスクトップや、ドキュメントのバックアップをしているのを止め、OneDrive 内に、新たに、ディレクトリを作成して、バックアップしたいものを、その中に移して、能動的に、バックアップするディレクトリを決めるのがよいと思います。
 
 個人個人で状況が異なりますので、この程度にしておきます。
+
+## Git-GitHub-RStudio
+
+RStudio で、Git-GitHub を利用するときのメモを書いておきます。
+
+### Basics
+
+> **用語：**ワークツリー（work tree with branches）、ステージ（staging）、ローカルリポジトリ（local repository in the PC）、リモートリポジトリ（remote repository in GitHub）、アップストリームリポジトリ（upstream repository in the owner's GitHub account）、プルリクエスト（pull-request and its approval）
+
+-   初期化：git init
+
+    -   RStudio: New Project 作成時に、Check または、Version Control Git
+
+-   GitHub 初期設定：
+
+    -   git config \--global [user.name](http://user.name) "Name"
+
+    -   git config \--global [user.email](http://user.email) EmailAddress
+
+    -   RStudio: SSH などの初期設定をしてあれば、Version Control Git で、Set up 可能。確認：Project Option and Global Option
+
+-   変更記録：git add . / git add [README.md](http://README.md)
+
+    -   git commit -m "message"
+
+    -   RStudio: Add されたものが、Git Tab 上に表示、Staged に、チェックをつけ、それから、Commit
+
+-   状況確認：変更内容のチェック：diff/status
+
+    -   ワークツリーとの差分：git diff FileName
+
+    -   リポジトリーとステージの差分：git diff -staged
+
+    -   変更ファイルのチェック：git status
+
+    -   RStudio: Git Tab のリストにあがっているものについて、Diff ボタンを押すと、表示される。
+
+-   履歴の確認：git log
+
+    -   RStudio: Git Tab の History を押すと、commit のリストが表示され、その、Log を見ることができる。
+
+-   もとに戻す：git restore
+
+    -   ワークツリーの変更の取り消し：git restore FileName
+
+    -   ステージにあげた変更をワークツリーに戻す：git restore \--staged FileName
+
+    -   RStudio: Staged にチェックをつけ、More の　revert を選択すると、同様なことが可能のように思われる。
+
+-   ブランチを作成：branch、ポインター HEAD
+
+    -   作成：git branch BranchName
+
+        -   RStudio: New Branch から作成可能
+
+    -   ブランチの一覧表示：git branch
+
+        -   RStudio: New Branch の右の三角から表示、選択
+
+    -   GitHub も含めたブランチの一覧表示：git branch -a
+
+        -   RStudio: New Branch の右の三角から表示、選択
+
+    -   切り替え：git switch BranchName
+
+    -   新しいブランチを作成して切り替え：git switch \--c BranchName
+
+    -   マージ：git merge BranchName
+
+        -   難しい。RStudio では、Terminal からで、Editor（Default は、vi 慣れていなければ、`Sys.setenv(EDITOR="nano"）`などとするのが得策。） が立ち上がる。
+
+    -   GitHub 上のものをマージ：git merge orign/main
+
+    -   コンフリクト conflict: 最終的なものを Editor  で残す。
+
+-   GitHub Origin の追加：git add remote orign
+
+    -   git add remote origin URL
+
+    -   git add upstream origin URL なども可能
+
+-   Push/Pull (Fetch+Merge)/Fetch:　リモート名　ブランチ名
+
+    -   git push orign main
+
+        -   RStudio: Push ボタン
+
+    -   git pull origin main
+
+        -   RStudio: Pull ボタン
+
+    -   git pull （省略可能）
+
+    -   git fetch origin （リモート名）confilict が起こりそうな時は、fetch + merge
+
+        -   変更途中の時は、fetch + merge 、main に取り込みたい時は、pull
+
+-   Pull Request の手順
+
+    -   main を最新の状態に更新: 例：This branch is [2 commits behind](https://github.com/ds-sl/eco-book/compare/main...icu-hsuzuki:eco-book:main) icu-hsuzuki:main.　Synk fork: This branch is out-of-date \> Update branch
+
+        -   git branch
+
+        -   git pull origin main
+
+    -   ブランチを作成
+
+        -   git switch -c BranchName
+
+    -   ファイルを修正・コミット
+
+        -   git add .
+
+        -   git commit -m "message"
+
+    -   Push
+
+        -   git push origin BranchName
+
+    -   Pull Request
+
+        -   \@GitHub: Pull Request \> New Pull Request
+
+        -   base: main \<- compare: BranchName（Comparing changes で、変更を提案している BranchName を確認）
+
+        -   Create Pull Request\>　Add Title, Comment \> Create Pull Requst ボタン
+
+        -   File Changed を確認
+
+        -   Reviewer を追加しておいてみてもらう。
+
+        -   Merge Pull Request
+
+        -   Delet Branch: git branch -d BranchName (-D force)
+
+        -   Code で確認
+
+    -   Code Review
+
+    -   Merge
+
+## Removing Large Files
+
+-   Scenario 1: The Large File Was Just Added in the Most Recent Commit
+
+    -   git rm \--cached *big_file_name*
+
+    -   git commit \--amend -C HEAD
+
+-   Scenario 2: The Large File Was Committed Prior to The Most Recent Commit
+
+    -   Locating the Last \"Good\" Commit: git log \--oneline
+
+    -   Initiate a Rebase Between the Last \"Good\" Commit and the Current Commit: git rebase -i 8464da4
+
+    -   This will open up a file in your Git editor (in my case, Vim), that looks something like this:
+
+        -   pick -\> edit
+
+    -   git rm \--cached csv_building_damage_assessment.csv
+
+    -   git commit \--amend -C HEAD
+
+```{=html}
+<!-- -->
+```
+-   Reset changes: git reset \--hard SHA-Name
+
+### Simple Pull Request
+
+1.  Log in to your GitHub account
+
+2.  Go to the respository you want to comment
+
+3.  Fork the repository
+
+4.  Clone the repository (forked from the original) using ssh
+
+    1.  git clone [git\@github.com](mailto:git@github.com):account/repo
+
+    2.  Enter ssh permisssion
+
+    3.  less FileName
+
+5.  git checkout -b Branch-Name
+
+6.  edit the file
+
+7.  git status
+
+8.  git diff
+
+9.  git add FileName
+
+10. git commit -m "short message"
+
+11. git push origin Branch-Name
+
+12. In GitHub acount: Compare & pull request
+
+13. Add a short comment
+
+14. Push Create a pull request
+
+### Owner Side Approval
+
+1.  See commit, file changed
+
+2.  Merges pull request
+
+3.  Confirm merge
+
+### 参考資料
+
+-   [GitHub Training Kit](https://training.github.com): CheatSheet や、日本語ドキュメントもある
+
+-   [Package usethis 2.0.0](https://www.tidyverse.org/blog/2020/12/usethis-2-0-0/): Tidyverse
+
+    -   [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html)
+
+-   [Removing Large Files](https://medium.com/analytics-vidhya/tutorial-removing-large-files-from-git-78dbf4cf83a)
