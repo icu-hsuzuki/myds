@@ -430,3 +430,7 @@ Git では、`-` と `–-` を使い分けるので注意が必要。`-` は、
     -   [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html)
 
 -   [Removing Large Files](https://medium.com/analytics-vidhya/tutorial-removing-large-files-from-git-78dbf4cf83a)
+
+-   [Version Control with Git and SVN](https://support.posit.co/hc/en-us/articles/200532077): Posit Site
+
+    -   [Managing -- Part 2 (Github and RStudio)](https://posit.co/resources/videos/managing-part-2-github-and-rstudio/) \[Video Lecture 48 min.\]
