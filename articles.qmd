@@ -1,3 +1,97 @@
 # Articles
 
 Articles のレビューなどを書いていく
+
+## AI
+
+### GPT-4 Technical Report
+
+-   Source: <https://arxiv.org/abs/2303.08774>
+
+-   Abstract
+
+    We report the development of GPT-4, a large-scale, multimodal model which can accept image and text inputs and produce text outputs. While less capable than humans in many real-world scenarios, GPT-4 exhibits human-level performance on various professional and academic benchmarks, including passing a simulated bar exam with a score around the top 10% of test takers. GPT-4 is a Transformer- based model pre-trained to predict the next token in a document. The post-training alignment process results in improved performance on measures of factuality and adherence to desired behavior. A core component of this project was developing infrastructure and optimization methods that behave predictably across a wide range of scales. This allowed us to accurately predict some aspects of GPT-4\'s performance based on models trained with no more than 1/1,000th the compute of GPT-4.
+
+-   アブストラクト 
+
+    GPT-4は、画像とテキストを入力し、テキストを出力することができる大規模なマルチモーダルモデルであり、その開発について報告する。GPT-4は、多くの実世界のシナリオにおいて人間より能力が劣るものの、模擬司法試験に受験者の上位10％程度のスコアで合格するなど、様々な専門的・学術的ベンチマークにおいて人間レベルの性能を発揮することができる。GPT-4は、文書中の次のトークンを予測するために事前に学習されたTransformerベースのモデルです。GPT-4は、文書中の次のトークンを予測するよう事前に学習させたTransformerベースのモデルで、学習後のアライメントプロセスにより、事実の正確さと望ましい行動への忠実さを評価するパフォーマンスが向上しています。このプロジェクトの中核をなすのは、幅広いスケールで予測可能な振る舞いをするインフラと最適化手法の開発でした。これにより、GPT-4の1,000分の1以下の計算量で学習したモデルから、GPT-4の性能の一部を正確に予測することができるようになりました。
+
+-   Contents
+
+    1 Introduction
+
+    2 Scope and Limitations of this Technical Report
+
+    3 Predictable Scaling
+
+    4 Capabilities
+
+    5 Limitations
+
+    6 Risks & mitigations
+
+    7 Conclusion
+
+    Authorship, Credit Attribution, and Acknowledgements
+
+    References
+
+    Appendix
+
+    A Exam Benchmark Methodology
+
+    B Impact of RLHF on capability (RLHF: Reinforcement Learning from Human Feedback )
+
+    C Contamination on professional and academic exams
+
+    D Contamination on academic benchmarks
+
+    E GSM-8K in GPT-4 training
+
+    F Multilingual MMLU (MMLU: Massive Multitask Language Understanding)
+
+    G Examples of GPT-4 Visual Input
+
+    H System Card
+
+    GPT-4 System Card
+
+    1 Introduction
+
+    2 GPT-4 Observed Safety Challenges
+
+    3 Deployment Preparation
+
+    4 System Safety
+
+    5 Conclusion and Next Steps
+
+    6 Acknowledgements
+
+    References
+
+    Appendix
+
+    A Full RBRM Instructions for Classifying Refusal Styles
+
+    B Full RBRM Instructions for Classifying Regulated Advice
+
+    C Full RBRM Instructions for Classifying Sexual Content
+
+    D Harmful Content Table Full Examples
+
+    E Harms of Representation Table Examples
+
+    F Disinformation and Influence Operations Table Examples
+
+### Self-Refine: Iterative Refinement with Self-Feedback
+
+-   Source: <https://arxiv.org/abs/2303.17651>
+
+-   Abstract
+
+    Like people, LLMs do not always generate the best text for a given generation problem on their first try (e.g., summaries, answers, explanations). Just as people then refine their text, we introduce SELF-REFINE, a framework for similarly improving initial outputs from LLMs through iterative feedback and refinement. The main idea is to generate an output using an LLM, then allow the same model to provide multi-aspect feedback for its own output; finally, the same model refines its previously generated output given its own feedback. Unlike earlier work, our iterative refinement framework does not require supervised training data or reinforcement learning, and works with a single LLM. We experiment with 7 diverse tasks, ranging from review rewriting to math reasoning, demonstrating that our approach outperforms direct generation. In all tasks, outputs generated with SELF-REFINE are preferred by humans and by automated metrics over those generated directly with GPT-3.5 and GPT-4, improving on average by absolute 20% across tasks.
+
+-   アブストラクト
+
+    人と同じように、LLMも与えられた生成問題に対して、最初の試行で最適なテキスト（例：要約、回答、説明）を生成するとは限りません。人がテキストを改良するように、私たちは、フィードバックと改良を繰り返しながら、LLMの最初の出力を同様に改良するフレームワーク、SELF-REFINEを紹介します。主なアイデアは、LLMを使用して出力を生成し、同じモデルが自身の出力に対して多面的なフィードバックを提供することである。従来の研究とは異なり、我々の反復洗練フレームワークは、教師付き学習データや強化学習を必要とせず、単一のLLMで動作する。レビューの書き換えから数学の推論まで、7つの多様なタスクで実験し、我々のアプローチが直接生成よりも優れていることを実証する。すべてのタスクにおいて、SELF-REFINEで生成された出力は、GPT-3.5やGPT-4で直接生成された出力よりも人間や自動化されたメトリクスによって好まれ、タスク間で平均20%絶対的に向上していることがわかります。
