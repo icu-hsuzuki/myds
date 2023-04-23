@@ -4,6 +4,22 @@ Articles のレビューなどを書いていく
 
 ## AI
 
+### Transformer: A Novel Neural Network Architecture for Language Understanding
+
+-   Source: <https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html>, AUGUST 31, 2017
+
+-   Attention Is All You Need: <https://arxiv.org/abs/1706.03762>, Submitted on 12 Jun 2017 ([v1](https://arxiv.org/abs/1706.03762v1)), last revised 6 Dec 2017 (this version, v5)
+
+-   A novel neural network architecture based on a self-attention mechanism that we believe to be particularly well suited for language understanding
+
+    -   In each step, it applies a self-attention mechanism which directly models relationships between all words in a sentence, regardless of their respective position.
+
+        -   The animal didn't cross the street because *it* was too tired.
+
+        -   The animal didn't cross the street because *it* was too wide.
+
+-   Gigazine: [Transformer の仕組み](https://gigazine.net/news/20230423-transformer-model/)（日本語）
+
 ### GPT-4 Technical Report
 
 -   Source: <https://arxiv.org/abs/2303.08774>

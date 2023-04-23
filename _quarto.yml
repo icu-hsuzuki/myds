@@ -6,6 +6,8 @@ book:
   title: "My Data Science"
   author: "Hiroshi Suzuki"
   date: today
+  repo-url: https://github.com/icu-hsuzuki/myds/
+  downloads: [pdf]
   
   reader-mode: true
   
