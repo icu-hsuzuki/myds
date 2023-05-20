@@ -228,6 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#非管理者として-r-と-rstudio-をインストール" id="toc-非管理者として-r-と-rstudio-をインストール" class="nav-link" data-scroll-target="#非管理者として-r-と-rstudio-をインストール"><span class="toc-section-number">3.1.5</span>  非管理者として R と RStudio をインストール</a></li>
   <li><a href="#texlive-のインストール" id="toc-texlive-のインストール" class="nav-link" data-scroll-target="#texlive-のインストール"><span class="toc-section-number">3.1.6</span>  TeXLive のインストール</a></li>
   <li><a href="#onedrive-の設定について" id="toc-onedrive-の設定について" class="nav-link" data-scroll-target="#onedrive-の設定について"><span class="toc-section-number">3.1.7</span>  OneDrive の設定について</a></li>
+  <li><a href="#備考" id="toc-備考" class="nav-link" data-scroll-target="#備考"><span class="toc-section-number">3.1.8</span>  備考</a></li>
   </ul></li>
   <li><a href="#git-github-rstudio" id="toc-git-github-rstudio" class="nav-link" data-scroll-target="#git-github-rstudio"><span class="toc-section-number">3.2</span>  Git-GitHub-RStudio</a>
   <ul class="collapse">
@@ -439,6 +440,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>そのあとで、バックアップするディレクトリを整理して、OneDrive のバックアップで、デスクトップや、ドキュメントのバックアップをしているのを止め、OneDrive 内に、新たに、ディレクトリを作成して、バックアップしたいものを、その中に移して、能動的に、バックアップするディレクトリを決めるのがよいと思います。</p>
 <p>個人個人で状況が異なりますので、この程度にしておきます。</p>
 </section>
+<section id="備考" class="level3" data-number="3.1.8">
+<h3 data-number="3.1.8" class="anchored" data-anchor-id="備考"><span class="header-section-number">3.1.8</span> 備考</h3>
+<p>LLM の一つである Google Bard が 2023年5月中旬に公開され、試してみた時の一つの応答が、TeXLive および R Packages のインストールに関係しているので、覚書として記する。ChatGPT, GPT4 は、基本的に2021年9月までのデータに依存しているせいか、以下の回答に近いものは、得られなかった。</p>
+<p><strong>Q. 2021年、Windowsシステムで、TeXやRのパッケージでインストールができない問題がありましたが、現在では解決しています。一時ファイルのOneDriveの問題に関連して、これらの問題を扱うためのシステム変更があったのでしょうか。</strong></p>
+<p><strong>Bard [2023.05.15].</strong>&nbsp;はい、2021年にWindowsシステムでTeXやRのパッケージをインストールする際の問題に対処するためのシステム変更がありました。この問題は、OneDriveとTeX Liveインストーラーの競合によって引き起こされました。OneDriveは時々TeX Liveインストーラーと同じ場所に一時ファイルを作成し、インストーラーが正常に完了しないようにしました。<br>
+<br>
+問題を解決するために、MicrosoftはOneDriveの一時ファイルの作成場所を変更する更新プログラムをリリースしました。この更新プログラムは2022年1月にリリースされ、ほとんどのユーザーの問題を解決しました。<br>
+<br>
+ただし、一部のユーザーは引き続きWindowsシステムにTeXやRのパッケージをインストールする際に問題が発生する可能性があります。まだ問題が発生している場合は、次の手順を試してください。</p>
+<pre><code>• OneDriveをアンインストールします。
+
+• コンピューターを再起動します。
+
+• OneDriveを再インストールします。
+
+• TeXとRのパッケージを再度インストールしてみてください。</code></pre>
+<p>それでも問題が解決しない場合は、Microsoftサポートにお問い合わせください。</p>
+</section>
 </section>
 <section id="git-github-rstudio" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="git-github-rstudio"><span class="header-section-number">3.2</span> Git-GitHub-RStudio</h2>
@@ -583,8 +602,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><p>Scenario 2: The Large File Was Committed Prior to The Most Recent Commit</p>
 <ul>
-<li><p>Locating the Last "Good" Commit: git log --oneline</p></li>
-<li><p>Initiate a Rebase Between the Last "Good" Commit and the Current Commit: git rebase -i 8464da4</p></li>
+<li><p>Locating the Last “Good” Commit: git log --oneline</p></li>
+<li><p>Initiate a Rebase Between the Last “Good” Commit and the Current Commit: git rebase -i 8464da4</p></li>
 <li><p>This will open up a file in your Git editor (in my case, Vim), that looks something like this:</p>
 <ul>
 <li>pick -&gt; edit</li>
